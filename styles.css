@@ -8,8 +8,8 @@
   }
  .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto ;
+  grid-template-rows: auto auto auto auto auto auto auto;
   background-color: #FEA82F;
   padding: 50px;
 }
@@ -23,4 +23,13 @@
 }
 .directions{
   font-weight: bold;
+}
+.player-1{
+
+}
+.player-2{
+
+}
+.open{
+
 }
