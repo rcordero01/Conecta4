@@ -67,4 +67,4 @@ function render() {
     };
   }
 }
-render();
+render()
