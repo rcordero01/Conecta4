@@ -24,6 +24,7 @@ const divEl = document.querySelectorAll(".grid-container div");
 
 function check (){
   for (let i = 0; i < divEl.length; i++)
+  //Check for a horizontal win for player one
   if (divEl[i].classList.contains("player-1") &&
   divEl[i + 1].classList.contains("player-1") &&
   divEl[i + 2].classList.contains("player-1") &&
@@ -31,7 +32,26 @@ function check (){
   divEl[i] != [5,11,17,23,29,35,41]
   ){
     alert("Player one wins!")
-  }}
+  //Check for a horizontal win for player two
+} else if (divEl[i].classList.contains("player-2") &&
+  divEl[i + 1].classList.contains("player-2") &&
+  divEl[i + 2].classList.contains("player-2") &&
+  divEl[i + 3].classList.contains("player-2") &&
+  divEl[i] != [5,11,17,23,29,35,41]
+  ){
+    alert("Player two wins!")
+  }
+}
+  //Check for a vertical win for player one  
+// } else (divEl[i].classList.contains("player-1") &&
+//   divEl[i + 6].classList.contains("player-1") &&
+//   divEl[i + 12].classList.contains("player-1") &&
+//   divEl[i + 18].classList.contains("player-1"){
+//   // divEl[i] != [5,11,17,23,29,35,41]
+//   alert("player one wins!")
+// }
+// }
+
 
 function render() {
   for (let i = 0; i < divEl.length; i++) {
