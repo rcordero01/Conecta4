@@ -11,16 +11,29 @@
 // }
 // createDivs();
 
+// const divArray = [];
+// for (let i = 0; i < divEl.length; i++){
+//     divArray.push(divEl[i])
+// }
+
 let currentPlayer = 1;
 
 const divEl = document.querySelectorAll(".grid-container div");
 
-const divArray = [];
-for (let i = 0; i < divEl.length; i++){
-    divArray.push(divEl[i])
-}
 
-let render = () => {
+
+function check (){
+  for (let i = 0; i < divEl.length; i++)
+  if (divEl[i].classList.contains("player-1") &&
+  divEl[i + 1].classList.contains("player-1") &&
+  divEl[i + 2].classList.contains("player-1") &&
+  divEl[i + 3].classList.contains("player-1") &&
+  divEl[i] != [5,11,17,23,29,35,41]
+  ){
+    alert("Player one wins!")
+  }}
+
+function render() {
   for (let i = 0; i < divEl.length; i++) {
     divEl[i].onclick = () => {
       if (currentPlayer == 1 && divEl[i].classList.contains("open")) {
@@ -33,28 +46,17 @@ let render = () => {
         divEl[i].classList.add("player-2");
         divEl[i].classList.remove("open");
         currentPlayer = 1;
-
+check();
         // document.querySelector(
         //   ".players-turn"
         // ).innerHTML = ` It's ${player2}'s turn! `;
+
         } else (alert("move not allowed"))
+
         // document.querySelector(
         //   ".players-turn"
         // ).innerHTML = ` It's ${player1}'s turn! `;
-        console.log(divEl)
       }
-    }
+    } 
 }
-
-
-
-// function check (){
-//     if (divArray[0].classList.contains("player-1") &&
-//         divArray[1].classList.contains("player-1") &&
-//         divArray[2].classList.contains("player-1") &&
-//         divArray[3].classList.contains("player-1")){
-//             alert("player one wins")
-// } 
-// }
-
 render();
