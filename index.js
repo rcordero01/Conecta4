@@ -1,12 +1,19 @@
-// Cached Elements
+// Query selectors
 const gameBoard = document.querySelector('.grid-container')
-const tiles = document.querySelectorAll('.grid-container div');
+const tiles = document.querySelectorAll('.grid-container div')
 
+// Initialized variables
 let currentPlayer = 1
-
 let board = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-
+// const player1 = window.prompt("Player one, enter your name!");
+// const player2 = window.prompt("Player two, enter your name!");
+//Event listener
 gameBoard.addEventListener('click', render)
+
+//Functions
+// function gameInfo(){
+//   document.getElementByTagName("h2").innerHTML = `It's ${player1} vs. ${player2}!`
+// }
 
 function buildBoard() {
     for (let i = 0; i < 20; i++) {
@@ -16,8 +23,6 @@ function buildBoard() {
         gameBoard.appendChild(space)
     }
 }
-
-buildBoard();
 
 function render(evt) {
     let link = evt.target
@@ -31,7 +36,7 @@ function render(evt) {
         } else if (currentPlayer === 2) {
             link.classList.remove('open')
             link.classList.add('taken')
-            link.style.backgroundColor = "blue"
+            link.style.backgroundColor = "yellow"
             currentPlayer = 1
             board[link.id] = "blue"
         } check();
@@ -41,7 +46,7 @@ function render(evt) {
 }
 
 function check(){
-  
+
   //horizontal hard-coded wins for red player one
 if (board[16] == "red" && board[17] == "red" && board[18] == "red" && board[19] == "red"){
   alert("Player one wins") 
@@ -124,164 +129,9 @@ if (board[16] == "red" && board[17] == "red" && board[18] == "red" && board[19] 
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // const player1 = window.prompt("Enter name for player 1: ");
-// // const player2 = window.prompt("Enter name for player 2: ");
-
-// // document.querySelector(".players-names").innerHTML = `${player1} vs ${player2}`;
-
-// // function createDivs(){
-// // for ( i = 0; i< 42; i++){
-// //    let newDiv = document.createElement("div")
-// //    divEl.appendChild(newDiv);
-// // }
-// // }
-// // createDivs();
-
-// // const divArray = [];
-// // for (let i = 0; i < divEl.length; i++){
-// //     divArray.push(divEl[i])
-// // }
-
-
-
-// let currentPlayer = 1;
-
-// // const divEl = document.querySelectorAll(".grid-container");
-
-
-// function buildBoard() {
-//   let board = []
-//   for (let i = 0; i < 42; i++) {
-//       let square = document.createElement('div')
-//       square.id = i
-//       square.setAttribute('class', 'square')
-//       document.body.appendChild(square)
-//   }
-// }
-
-// buildBoard()
-
-// function check() {
-//   for (let i = 0; i < divEl.length; i++)
-//     //Check for a horizontal win for player one
-//     if (
-//       divEl[i].classList.contains("player-1") &&
-//       divEl[i + 1].classList.contains("player-1") &&
-//       divEl[i + 2].classList.contains("player-1") &&
-//       divEl[i + 3].classList.contains("player-1") &&
-//       divEl[i] != [5, 11, 17, 23, 29, 35, 41]
-//     ) {
-//       alert("Player one wins!");
-      
-//     } else if (
-//       divEl[i].classList.contains("player-2") &&
-//       divEl[i + 1].classList.contains("player-2") &&
-//       divEl[i + 2].classList.contains("player-2") &&
-//       divEl[i + 3].classList.contains("player-2") &&
-//       divEl[i] != [5, 11, 17, 23, 29, 35, 41]
-//     ) {
-//       alert("Player two wins!");
-      
-//     }
-// }
-
-
-// // render()
+function resetBoard() {
+  for (let i = 0; i < board.length; i++) {
+      board[i] = 0
+  }
+}
+buildBoard();
