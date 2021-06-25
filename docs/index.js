@@ -5,8 +5,8 @@ const tiles = document.querySelectorAll(".grid-container div");
 // Initialized variables
 let currentPlayer = 1;
 let board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const player1 = window.prompt("Primer jugador, introduce tu nombre: ");
-const player2 = window.prompt("Segundo jugador, introduce tu nombre: ");
+const player1 = window.prompt("Jugador 1: ");
+const player2 = window.prompt("Jugador 2: ");
 
 //Event listeners
 gameBoard.addEventListener("click", render);
