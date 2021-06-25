@@ -6,6 +6,7 @@
     background-color: white;
     text-align: center;
     background-color: rgb(218, 214, 208);
+    size: inherit;
 
   }
  .grid-container {
