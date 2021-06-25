@@ -5,8 +5,8 @@
     font-family: Helvetica;
     background-color: white;
     text-align: center;
-    background-color: rgb(218, 214, 208);
     size: inherit;
+    border: 2px solid black;
 
   }
  .grid-container {
@@ -27,12 +27,16 @@
 .directions{
   font-weight: bold;
 }
-h1{
-  font-size: 30px;
+h1 {
+  font-size: 100px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid gray;
 }
 h2{
+  font-size: 75px;
   color: red;
+  font-family: 'Roboto', sans-serif;
 }
-h3{
-
+p{
+  font-size: 25px;
 }

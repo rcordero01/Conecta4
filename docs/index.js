@@ -53,7 +53,7 @@ function render(evt) {
       currentPlayer = 1;
       document.getElementById(
         "players-turn"
-      ).innerHTML = ` Let toca a ${player1}!`;
+      ).innerHTML = ` Le toca a ${player1}!`;
     }
     check();
   } else if (link.classList.contains("taken")) {
