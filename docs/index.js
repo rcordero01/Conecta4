@@ -5,8 +5,8 @@ const tiles = document.querySelectorAll(".grid-container div");
 // Initialized variables
 let currentPlayer = 1;
 let board = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const player1 = window.prompt("Player one, enter your name!");
-const player2 = window.prompt("Player two, enter your name!");
+const player1 = window.prompt("Primer jugador, entroduce tu nombre: ");
+const player2 = window.prompt("Segundo jugador, entroduce tu nombre:");
 
 //Event listeners
 gameBoard.addEventListener("click", render);
@@ -24,10 +24,13 @@ function buildBoard() {
 }
 
 function player1Wins(){
-  document.getElementById("game-winner").innerHTML = `${player1} wins!`;
+  document.getElementById("game-winner").innerHTML = `<h2> ${player1} ganó! </h2>`;
+  document.getElementById("players-turn").innerHTML = "" ;
 }
+
 function player2Wins(){
-  document.getElementById("game-winner").innerHTML = `${player2} wins!`;
+  document.getElementById("game-winner").innerHTML = `<h2> ${player2} ganó! </h2>`;
+  document.getElementById("players-turn").innerHTML = "" ;
 }
 
 function render(evt) {
@@ -39,7 +42,7 @@ function render(evt) {
       link.classList.remove("open");
       link.classList.add("taken");
       currentPlayer = 2;
-      document.getElementById("players-turn").innerHTML = `${player2}'s turn!` ;
+      document.getElementById("players-turn").innerHTML = ` Le toca a ${player2}!` ;
 
     } else if (currentPlayer === 2) {
       board[link.id] = "blue";
@@ -47,7 +50,7 @@ function render(evt) {
       link.classList.add("taken");
       link.style.backgroundColor = "yellow";
       currentPlayer = 1;
-      document.getElementById("players-turn").innerHTML = `${player1}'s turn!`;
+      document.getElementById("players-turn").innerHTML = ` Let toca a ${player1}!`;
     }
     check();
   } else if (link.classList.contains("taken")) {
