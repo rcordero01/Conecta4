@@ -10,4 +10,4 @@ This game was built using HTML, CSS, and Javascript.
 
 Click below to start a game! Each player will be prompted to enter their name so you can see who's turn it is, as well as who wins!
 
-https://rcordero01.github.io/Project1/
+https://rcordero01.github.io/Connect-4-Spanish/
